@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using gym.vista;
 namespace gym
 {
     /// <summary>
@@ -23,6 +23,12 @@ namespace gym
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            RegistroCliente clie = new RegistroCliente();
+            clie.ShowDialog();
         }
     }
 }
