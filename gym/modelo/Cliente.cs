@@ -18,8 +18,9 @@ namespace gym.modelo
         public String telefonoCasa { get; set; }
         public String telefonoOficina { get; set; }
         public DateTime fechaNacimiento { get; set; }
-
+        public String sexo { get; set; }
+        public String codBiometrico { get; set; }
+        public byte[] foto { get; set; }
         public Cliente() { }
-        
     }
 }

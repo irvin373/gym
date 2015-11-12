@@ -31,10 +31,8 @@ namespace gym.controlador
         public void insertar(Cliente cliente)
         {
             SqlConnection connection = ConexionBD.Instance.Conexion;
-            String query = "INSERT INTO cliente (ci,nombre,apellidoPaterno,apellidoMaterno,"+
-                "domicilio,zona,email,telefonoCasa, telefonoOficina,fechaNacimiento)"+
-                "VALUES(@ci,@nombre,@apellidoPaterno,@apellidoMaterno," +
-                "@domicilio,@zona,@email,@telefonoCasa, @telefonoOficina,@fechaNacimiento)";
+            String query = "INSERT INTO cliente (ci,nombre,apellidoPaterno,apellidoMaterno,domicilio,zona,email,telefonoCasa,telefonoOficina,fechaNacimiento,sexo,codigoBiometrico,foto)"+
+                "VALUES(@ci,@nombre,@apellidoPaterno,@apellidoMaterno,@domicilio,@zona,@email,@telefonoCasa,@telefonoOficina,@fechaNacimiento,@sexo,@codigoBiometrico,@foto)";
             connection.Open();
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@ci", cliente.ci);
@@ -47,7 +45,9 @@ namespace gym.controlador
             command.Parameters.AddWithValue("@telefonoCasa", cliente.telefonoCasa);
             command.Parameters.AddWithValue("@telefonoOficina", cliente.telefonoOficina);
             command.Parameters.AddWithValue("@fechaNacimiento", cliente.fechaNacimiento);
-
+            command.Parameters.AddWithValue("@sexo", cliente.sexo);
+            command.Parameters.AddWithValue("@codigoBiometrico", cliente.codBiometrico);
+            command.Parameters.AddWithValue("@foto", cliente.foto);
             command.ExecuteNonQuery();
             connection.Close();
         }

@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using gym.modelo;
 using gym.controlador;
+using Microsoft.Win32;
+using System.IO;
 
 namespace gym.vista
 {
@@ -21,11 +23,14 @@ namespace gym.vista
     /// </summary>
     public partial class RegistroCliente : Window
     {
+        String codigoBio = String.Empty;
+        byte[] picbyte;
         public RegistroCliente()
         {
             InitializeComponent();
             //sexoBox.Background = Brushes.LightBlue;
             ComboBoxItem cboxitem = new ComboBoxItem();
+
             cboxitem.Content = "Masculino";
             sexoBox.Items.Add(cboxitem);
             cboxitem = new ComboBoxItem();
@@ -35,6 +40,7 @@ namespace gym.vista
 
         private void GuardarBtn_Click(object sender, RoutedEventArgs e)
         {
+            MemoryStream stream = new MemoryStream();            
             Cliente cliente = new Cliente();
             cliente.ci = int.Parse(ciBox.Text);
             cliente.nombre = nombreBox.Text;
@@ -46,7 +52,9 @@ namespace gym.vista
             cliente.telefonoCasa = telefonoCasaBox.Text;
             cliente.telefonoOficina = telefonoOficinaBox.Text;
             cliente.fechaNacimiento = feCNacimientoBox.DisplayDate;
-
+            cliente.sexo = sexoBox.Text;
+            cliente.codBiometrico = codigoBio;
+            cliente.foto = picbyte;
             try
             {
                 ControllerCliente.Instance.insertar(cliente);
@@ -56,6 +64,29 @@ namespace gym.vista
                 MessageBox.Show(ex.Message);
                 throw;
             }
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            Biometrico biometrico = new Biometrico();
+            codigoBio = biometrico.getBiometrica();
+            MessageBox.Show(codigoBio);
+        }
+
+        private void cargarImagen_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Title = "Open Image";
+            dlg.Filter = "jpg files (*.jpg)|*.jpg|All files (*.*)|*.*";
+            if (dlg.ShowDialog().Value)
+            {
+                image.Source = new BitmapImage(new Uri(dlg.FileName));
+            }
+            FileStream fs;
+            fs = new FileStream(dlg.FileName, FileMode.Open, FileAccess.Read);
+            picbyte = new byte[fs.Length];
+            fs.Read(picbyte, 0, System.Convert.ToInt32(fs.Length));
+            fs.Close();
         }
     }
 }
