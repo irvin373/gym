@@ -12,8 +12,50 @@ namespace gym.controlador
     class ControllerCliente
     {
         public static ControllerCliente instancia = null;
+        SqlConnection connection = ConexionBD.Instance.Conexion;
+
         private ControllerCliente()
         {
+        }
+
+        public Client buscarCliente(String id)
+        {
+            SqlCommand command;
+            SqlDataReader dataReader;
+            Client cliente = new Client();
+            string sql = "select * from cliente where ci = '" + id + "'";
+            try
+            {
+                connection.Open();
+                command = new SqlCommand(sql, connection);
+                dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    cliente.ci = dataReader.GetInt32(0);
+                    cliente.nombre = dataReader.GetString(1);
+                    cliente.apellidoPaterno = dataReader.GetString(2);
+                    cliente.apellidoMaterno = dataReader.GetString(3);
+                    cliente.domicilio = dataReader.GetString(4);
+                    cliente.zona = dataReader.GetString(5);
+                    cliente.email = dataReader.GetString(6);
+                    cliente.telefonoCasa = dataReader.GetString(7);
+                    cliente.telefonoOficina = dataReader.GetString(8);
+                    cliente.fechaNacimiento = dataReader.GetDateTime(9);
+                    cliente.sexo = dataReader.GetString(10);
+                    cliente.codBiometrico = dataReader.GetString(11);
+                    //cliente.foto = (byte[])dataReader.GetValue(12);
+                }
+                dataReader.Close();
+                command.Dispose();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                connection.Close();
+                cliente = null;
+            }
+            return cliente;
         }
 
         public static ControllerCliente Instance
@@ -28,9 +70,8 @@ namespace gym.controlador
             }
         }
 
-        public void insertar(Cliente cliente)
+        public void insertar(Client cliente)
         {
-            SqlConnection connection = ConexionBD.Instance.Conexion;
             String query = "INSERT INTO cliente (ci,nombre,apellidoPaterno,apellidoMaterno,domicilio,zona,email,telefonoCasa,telefonoOficina,fechaNacimiento,sexo,codigoBiometrico,foto)"+
                 "VALUES(@ci,@nombre,@apellidoPaterno,@apellidoMaterno,@domicilio,@zona,@email,@telefonoCasa,@telefonoOficina,@fechaNacimiento,@sexo,@codigoBiometrico,@foto)";
             connection.Open();

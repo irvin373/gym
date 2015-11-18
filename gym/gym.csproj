@@ -57,11 +57,14 @@
     </ApplicationDefinition>
     <Compile Include="controlador\ConexionBD.cs" />
     <Compile Include="controlador\ControllerCliente.cs" />
-    <Compile Include="modelo\Cliente.cs" />
-    <Compile Include="vista\MoockBiometrico.xaml.cs">
+    <Compile Include="modelo\Client.cs" />
+    <Compile Include="vista\Clientes\Buscar.xaml.cs">
+      <DependentUpon>Buscar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="vista\Clientes\MoockBiometrico.xaml.cs">
       <DependentUpon>MoockBiometrico.xaml</DependentUpon>
     </Compile>
-    <Compile Include="vista\RegistroCliente.xaml.cs">
+    <Compile Include="vista\Clientes\RegistroCliente.xaml.cs">
       <DependentUpon>RegistroCliente.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
@@ -76,11 +79,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="vista\MoockBiometrico.xaml">
+    <Page Include="vista\Clientes\Buscar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="vista\RegistroCliente.xaml">
+    <Page Include="vista\Clientes\MoockBiometrico.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="vista\Clientes\RegistroCliente.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

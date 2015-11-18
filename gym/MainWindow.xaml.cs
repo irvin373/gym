@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using gym.vista;
+using gym.vista.Cliente;
+
 namespace gym
 {
     /// <summary>
@@ -29,6 +31,12 @@ namespace gym
         {
             RegistroCliente clie = new RegistroCliente();
             clie.ShowDialog();
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            Buscar busqueda = new Buscar();
+            busqueda.ShowDialog();
         }
     }
 }
