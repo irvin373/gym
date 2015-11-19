@@ -18,6 +18,27 @@ namespace gym.controlador
         {
         }
 
+        public bool EliminarCliente(String Id)
+        {
+            bool resp = false;
+            try
+            {
+                connection.Open();
+                String sql = "delete from cliente where ci ='" + Id+"'";
+                SqlCommand command = new SqlCommand(sql, connection);
+                command.ExecuteReader();
+                connection.Close();
+                resp = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                connection.Close();
+                resp = false;
+            }
+            return resp;
+        }
+
         public Client buscarCliente(String id)
         {
             SqlCommand command;

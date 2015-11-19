@@ -61,11 +61,17 @@
     <Compile Include="vista\Clientes\Buscar.xaml.cs">
       <DependentUpon>Buscar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="vista\Clientes\EliminarCliente.xaml.cs">
+      <DependentUpon>EliminarCliente.xaml</DependentUpon>
+    </Compile>
     <Compile Include="vista\Clientes\MoockBiometrico.xaml.cs">
       <DependentUpon>MoockBiometrico.xaml</DependentUpon>
     </Compile>
     <Compile Include="vista\Clientes\RegistroCliente.xaml.cs">
       <DependentUpon>RegistroCliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="vista\imagePixel.xaml.cs">
+      <DependentUpon>imagePixel.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -83,11 +89,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="vista\Clientes\EliminarCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="vista\Clientes\MoockBiometrico.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="vista\Clientes\RegistroCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="vista\imagePixel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

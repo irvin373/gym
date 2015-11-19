@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using gym.vista;
 using gym.vista.Cliente;
+using gym.vista.Clientes;
 
 namespace gym
 {
@@ -37,6 +38,18 @@ namespace gym
         {
             Buscar busqueda = new Buscar();
             busqueda.ShowDialog();
+        }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            EliminarCliente eliminar = new EliminarCliente();
+            eliminar.ShowDialog();
+        }
+
+        private void button3_Click(object sender, RoutedEventArgs e)
+        {
+            imagePixel image = new imagePixel();
+            image.ShowDialog();
         }
     }
 }
