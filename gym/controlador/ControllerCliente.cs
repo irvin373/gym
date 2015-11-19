@@ -64,7 +64,7 @@ namespace gym.controlador
                     cliente.fechaNacimiento = dataReader.GetDateTime(9);
                     cliente.sexo = dataReader.GetString(10);
                     cliente.codBiometrico = dataReader.GetString(11);
-                    //cliente.foto = (byte[])dataReader.GetValue(12);
+                    cliente.foto = (byte[])dataReader.GetValue(12);
                 }
                 dataReader.Close();
                 command.Dispose();

@@ -1,0 +1,43 @@
+﻿<Window x:Class="gym.vista.Clientes.EliminarCliente"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:gym.vista.Clientes"
+        mc:Ignorable="d"
+        Title="EliminarCliente" Height="500" Width="500">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/gym;component/image/background.jpg"/>
+        </Grid.Background>
+        <Label x:Name="label" Content="CI" HorizontalAlignment="Left" Margin="18,72,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.461,0.519" Foreground="White" FontSize="16"/>
+        <Label x:Name="label_Copy" Content="Nombre" HorizontalAlignment="Left" Margin="18,108,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.461,0.519" Foreground="White" FontSize="16"/>
+        <Label x:Name="label_Copy1" Content="Ap. Paterno" HorizontalAlignment="Left" Margin="18,144,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.461,0.519" Foreground="White" FontSize="16"/>
+        <Label x:Name="label_Copy2" Content="Ap. Materno" HorizontalAlignment="Left" Margin="18,180,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.461,0.519" Foreground="White" FontSize="16"/>
+        <Label x:Name="label_Copy3" Content="Domicilio" HorizontalAlignment="Left" Margin="18,216,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.409,1.161" Foreground="White" FontSize="16"/>
+        <Label x:Name="label_Copy4" Content="email" HorizontalAlignment="Left" Margin="18,288,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.417,6.839" Foreground="White" FontSize="16"/>
+        <Label x:Name="label_Copy5" Content="Zona" HorizontalAlignment="Left" Margin="20,252,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.461,0.519" Foreground="White" FontSize="16"/>
+        <Label x:Name="label_Copy6" Content="Tel. Casa" HorizontalAlignment="Left" Margin="20,324,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.461,0.519" Foreground="White" FontSize="16"/>
+        <Label x:Name="label_Copy7" Content="Tel. Oficina" HorizontalAlignment="Left" Margin="20,360,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.461,0.519" Foreground="White" FontSize="16"/>
+        <Label x:Name="label_Copy8" Content="Fecha Nacimiento" HorizontalAlignment="Left" Margin="18,396,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.452,1.694" Foreground="White" FontSize="16"/>
+        <Label x:Name="label_Cop11" Content="Biometrico" HorizontalAlignment="Left" Margin="18,427,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.452,1.694" Foreground="White" FontSize="16"/>
+        <TextBox x:Name="PaternoBox" HorizontalAlignment="Left" Height="23" Margin="128,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" IsEnabled="False"/>
+        <TextBox x:Name="nombreBox" HorizontalAlignment="Left" Height="23" Margin="128,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" IsEnabled="False"/>
+        <TextBox x:Name="ciBox" HorizontalAlignment="Left" Height="23" Margin="128,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" IsEnabled="False"/>
+        <TextBox x:Name="MaternoBox" HorizontalAlignment="Left" Height="23" Margin="128,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" IsEnabled="False"/>
+        <TextBox x:Name="DomicilioBox" HorizontalAlignment="Left" Height="23" Margin="128,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="337" IsEnabled="False"/>
+        <TextBox x:Name="ZonaBox" HorizontalAlignment="Left" Height="23" Margin="128,260,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" IsEnabled="False"/>
+        <TextBox x:Name="emailBox" HorizontalAlignment="Left" Height="23" Margin="128,296,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" IsEnabled="False"/>
+        <TextBox x:Name="telefonoCasaBox" HorizontalAlignment="Left" Height="23" Margin="128,332,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" IsEnabled="False"/>
+        <TextBox x:Name="telefonoOficinaBox" HorizontalAlignment="Left" Height="23" Margin="128,368,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" IsEnabled="False"/>
+        <DatePicker x:Name="feCNacimientoBox" HorizontalAlignment="Left" Margin="159,401,0,0" VerticalAlignment="Top" Width="133"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="131" Margin="310,80,0,0" VerticalAlignment="Top" Width="138" Source="/gym;component/image/cliente-default.png"/>
+        <Label x:Name="label_Copy9" Content="sexo" HorizontalAlignment="Left" Margin="310,260,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.417,6.839" Foreground="White" FontSize="16" Height="32"/>
+        <TextBox x:Name="sexoBox" HorizontalAlignment="Left" Height="23" Margin="357,268,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <TextBox x:Name="busquedaBox" HorizontalAlignment="Left" Height="24" Margin="159,39,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="171" TextChanged="busquedaBox_TextChanged"/>
+        <Label x:Name="label_Copy10" Content="Busqueda por CI" HorizontalAlignment="Left" Margin="20,32,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.461,0.519" Foreground="White" FontSize="16"/>
+        <Button x:Name="busquedaBtn" Content="Busqueda" HorizontalAlignment="Left" Margin="352,39,0,0" VerticalAlignment="Top" Width="82" Height="24" Click="busquedaBtn_Click"/>
+        <TextBox x:Name="BiometricoBox" HorizontalAlignment="Left" Height="23" Margin="128,435,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="164" IsEnabled="False"/>
+        <Button x:Name="EliminarBtn" Content="Eliminar" HorizontalAlignment="Left" Margin="310,304,0,0" VerticalAlignment="Top" Width="167" Height="51" Background="#FFF32C2C" Foreground="White" FontSize="18.667" Click="EliminarBtn_Click"/>
+    </Grid>
+</Window>

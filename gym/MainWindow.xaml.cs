@@ -48,8 +48,6 @@ namespace gym
 
         private void button3_Click(object sender, RoutedEventArgs e)
         {
-            imagePixel image = new imagePixel();
-            image.ShowDialog();
         }
     }
 }
