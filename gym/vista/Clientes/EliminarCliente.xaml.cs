@@ -43,15 +43,7 @@ namespace gym.vista.Clientes
 
         internal String ReplexNum(String format)
         {
-            Match m;// = Regex.Match(format, @"[\d]+", RegexOptions.IgnoreCase);
-            foreach (var item in format)
-            {
-                m = Regex.Match(item.ToString(), @"[\d]+", RegexOptions.IgnoreCase);
-                if (!m.Success)
-                {
-                    format = format.Replace(item.ToString(), String.Empty);
-                }
-            }
+            format = Regex.Replace(format, @"[a-zA-Z\W]+", String.Empty);
             return format;
         }
 
