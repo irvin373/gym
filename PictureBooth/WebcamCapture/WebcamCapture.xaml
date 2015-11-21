@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="WebcamCapture.WebcamCapture"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="260" d:DesignWidth="340">
+    <Grid Height="240" Width="320" Margin="5">
+        <Image Width="320" Height="240" Name="CameraImage">
+            <Image.Source>
+                <BitmapImage UriSource="" />
+            </Image.Source>
+        </Image>
+    </Grid>
+</UserControl>

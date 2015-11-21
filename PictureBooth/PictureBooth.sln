@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PictureBooth", "PictureBooth\PictureBooth.csproj", "{0BE6DEDC-C332-4585-98EF-22406259B75F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebcamCapture", "WebcamCapture\WebcamCapture.csproj", "{FD11B9B3-7DDC-490E-8005-91AA439B3155}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0BE6DEDC-C332-4585-98EF-22406259B75F}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{0BE6DEDC-C332-4585-98EF-22406259B75F}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{0BE6DEDC-C332-4585-98EF-22406259B75F}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{0BE6DEDC-C332-4585-98EF-22406259B75F}.Debug|x86.ActiveCfg = Debug|x86
+		{0BE6DEDC-C332-4585-98EF-22406259B75F}.Debug|x86.Build.0 = Debug|x86
+		{0BE6DEDC-C332-4585-98EF-22406259B75F}.Release|Any CPU.ActiveCfg = Release|x86
+		{0BE6DEDC-C332-4585-98EF-22406259B75F}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{0BE6DEDC-C332-4585-98EF-22406259B75F}.Release|Mixed Platforms.Build.0 = Release|x86
+		{0BE6DEDC-C332-4585-98EF-22406259B75F}.Release|x86.ActiveCfg = Release|x86
+		{0BE6DEDC-C332-4585-98EF-22406259B75F}.Release|x86.Build.0 = Release|x86
+		{FD11B9B3-7DDC-490E-8005-91AA439B3155}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD11B9B3-7DDC-490E-8005-91AA439B3155}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD11B9B3-7DDC-490E-8005-91AA439B3155}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{FD11B9B3-7DDC-490E-8005-91AA439B3155}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{FD11B9B3-7DDC-490E-8005-91AA439B3155}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FD11B9B3-7DDC-490E-8005-91AA439B3155}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD11B9B3-7DDC-490E-8005-91AA439B3155}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD11B9B3-7DDC-490E-8005-91AA439B3155}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{FD11B9B3-7DDC-490E-8005-91AA439B3155}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{FD11B9B3-7DDC-490E-8005-91AA439B3155}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
