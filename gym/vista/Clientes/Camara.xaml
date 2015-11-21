@@ -1,0 +1,16 @@
+﻿<Window x:Class="gym.vista.Clientes.Camara"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:gym.vista.Clientes"
+        mc:Ignorable="d"
+    Title="Windows Picture Booth" Height="355" Width="714" xmlns:my="clr-namespace:WebcamCapture;assembly=WebcamCapture" WindowStyle="SingleBorderWindow" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+    <Grid x:Name="MyGrid" Width="687" Height="309">
+        <my:WebcamCapture HorizontalAlignment="Left" Margin="12,49,0,0" Name="webcamCapture1" VerticalAlignment="Top" />
+        <Button Content="Start Camera" Height="31" HorizontalAlignment="Left" Margin="12,12,0,0" Name="buttonStartCapture" VerticalAlignment="Top" Width="136" Click="buttonStartCapture_Click" />
+        <Button Content="Stop Camera" Height="31" HorizontalAlignment="Left" Margin="154,12,0,0" Name="buttonStopCapture" VerticalAlignment="Top" Width="136" Click="buttonStopCapture_Click" />
+        <Image Height="250" HorizontalAlignment="Left" Margin="348,49,0,0" Name="capturedImage" Stretch="Fill" VerticalAlignment="Top" Width="330" />
+        <Button Content="Capture Image" Height="31" HorizontalAlignment="Left" Margin="296,12,0,0" Name="buttonCaptureImage" VerticalAlignment="Top" Width="132" Click="buttonCaptureImage_Click" />
+    </Grid>
+</Window>

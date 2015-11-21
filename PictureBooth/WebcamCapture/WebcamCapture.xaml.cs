@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Windows.Interop;
 using ImagingDevice;
 using System.Drawing;
+using System.IO;
 
 namespace WebcamCapture
 {
@@ -59,6 +60,22 @@ namespace WebcamCapture
         public BitmapSource GrabImage()
         {
             return (BitmapSource)CameraImage.Source;
+        }
+
+        public byte[] getpic()
+        {
+            JpegBitmapEncoder encoder = new JpegBitmapEncoder();
+            encoder.Frames.Add(BitmapFrame.Create(GrabImage()));
+            encoder.QualityLevel = 100;
+            byte[] bit = new byte[0];
+            using (MemoryStream stream = new MemoryStream())
+            {
+                encoder.Frames.Add(BitmapFrame.Create(GrabImage()));
+                encoder.Save(stream);
+                bit = stream.ToArray();
+                stream.Close();
+            }
+            return bit;
         }
 
         private void grabber_ImageCaptured(object source, ImageGrabberEventArgs e)

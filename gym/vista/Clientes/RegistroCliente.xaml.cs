@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using gym.modelo;
+using gym.vista.Clientes;
 using gym.controlador;
 using Microsoft.Win32;
 using System.IO;
@@ -91,6 +92,11 @@ namespace gym.vista
             fs.Close();
         }
 
+        internal String RegexMail(String format)
+        {
+            return format;
+        }
+
         internal String ReplexNum(String format)
         {
             format = Regex.Replace(format, @"[a-zA-Z\W]+", String.Empty);
@@ -110,6 +116,33 @@ namespace gym.vista
         private void telefonoOficinaBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             telefonoOficinaBox.Text = ReplexNum(telefonoOficinaBox.Text);
+        }
+
+        private void camaraBtn_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Camara camara = new Camara();
+                picbyte = camara.mensage();
+
+                System.IO.MemoryStream stream = new System.IO.MemoryStream(picbyte);
+                BitmapImage foto = new BitmapImage();
+                foto.BeginInit();
+                foto.StreamSource = stream;
+                foto.CacheOption = BitmapCacheOption.OnLoad;
+                foto.EndInit();
+                image.Source = foto;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("error");
+            }
+
+        }
+
+        private void nombreBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
