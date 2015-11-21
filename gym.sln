@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gym", "gym\gym.csproj", "{D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebcamCapture", "PictureBooth\WebcamCapture\WebcamCapture.csproj", "{FD11B9B3-7DDC-490E-8005-91AA439B3155}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pruebas", "pruebas\pruebas.csproj", "{DAE04872-36C8-4A9E-A8BA-1D2E35283A95}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{FD11B9B3-7DDC-490E-8005-91AA439B3155}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD11B9B3-7DDC-490E-8005-91AA439B3155}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD11B9B3-7DDC-490E-8005-91AA439B3155}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAE04872-36C8-4A9E-A8BA-1D2E35283A95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAE04872-36C8-4A9E-A8BA-1D2E35283A95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAE04872-36C8-4A9E-A8BA-1D2E35283A95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAE04872-36C8-4A9E-A8BA-1D2E35283A95}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

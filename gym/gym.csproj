@@ -58,6 +58,7 @@
     </ApplicationDefinition>
     <Compile Include="controlador\ConexionBD.cs" />
     <Compile Include="controlador\ControllerCliente.cs" />
+    <Compile Include="controlador\RegexInstance.cs" />
     <Compile Include="modelo\Client.cs" />
     <Compile Include="vista\Clientes\Buscar.xaml.cs">
       <DependentUpon>Buscar.xaml</DependentUpon>

@@ -41,12 +41,6 @@ namespace gym.vista.Clientes
             }
         }
 
-        internal String ReplexNum(String format)
-        {
-            format = Regex.Replace(format, @"[a-zA-Z\W]+", String.Empty);
-            return format;
-        }
-
         private void busquedaBtn_Click(object sender, RoutedEventArgs e)
         {
             Client cliente = ControllerCliente.Instance.buscarCliente(busquedaBox.Text);
@@ -81,7 +75,7 @@ namespace gym.vista.Clientes
 
         private void busquedaBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            busquedaBox.Text = ReplexNum(busquedaBox.Text);
+            busquedaBox.Text = RegexInstance.Instance.regexNumber(busquedaBox.Text);
         }
     }
 }

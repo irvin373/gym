@@ -26,7 +26,7 @@ namespace gym.vista
     public partial class RegistroCliente : Window
     {
         String codigoBio = String.Empty;
-        byte[] picbyte;
+        byte[] picbyte = null;
         public RegistroCliente()
         {
             InitializeComponent();
@@ -38,11 +38,31 @@ namespace gym.vista
             cboxitem = new ComboBoxItem();
             cboxitem.Content = "Femenino";
             sexoBox.Items.Add(cboxitem);
+
+        }
+        
+        internal String verificarEntradas(Client cliente)
+        {
+            String resp = String.Empty;
+            resp = cliente.verificar();
+            if (ciBox.Text == String.Empty)
+            {
+                resp = "ci aun no ingresado";
+            }
+            if (picbyte == null)
+            {
+                resp = "la imagen aun no se ha seleccionado";
+            }
+            if (feCNacimientoBox.Text == String.Empty)
+            {
+                resp = "fecha aun no ingresada";
+            }
+            
+            return resp;
         }
 
-        private void GuardarBtn_Click(object sender, RoutedEventArgs e)
+        internal Client llenarObjeto()
         {
-            MemoryStream stream = new MemoryStream();            
             Client cliente = new Client();
             cliente.ci = int.Parse(ciBox.Text);
             cliente.nombre = nombreBox.Text;
@@ -57,15 +77,29 @@ namespace gym.vista
             cliente.sexo = sexoBox.Text;
             cliente.codBiometrico = codigoBio;
             cliente.foto = picbyte;
+            return cliente;
+        }
+
+        private void GuardarBtn_Click(object sender, RoutedEventArgs e)
+        {
             try
             {
-                ControllerCliente.Instance.insertar(cliente);
-                MessageBox.Show("guardado exitosamente!!");
+                var cliente = llenarObjeto();
+                String mensajeError = verificarEntradas(cliente);
+                if (mensajeError != String.Empty)
+                {
+                    MessageBox.Show(mensajeError);
+                }
+                else
+                {
+                    ControllerCliente.Instance.insertar(cliente);
+                    MessageBox.Show("guardado exitosamente!!");
+                } 
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                throw;
+                //throw;
             }
         }
 
@@ -92,30 +126,19 @@ namespace gym.vista
             fs.Close();
         }
 
-        internal String RegexMail(String format)
-        {
-            return format;
-        }
-
-        internal String ReplexNum(String format)
-        {
-            format = Regex.Replace(format, @"[a-zA-Z\W]+", String.Empty);
-            return format;
-        }
-
         private void ciBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            ciBox.Text = ReplexNum(ciBox.Text);
+            ciBox.Text = RegexInstance.Instance.regexNumber(ciBox.Text);
         }
 
         private void telefonoCasaBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            telefonoCasaBox.Text = ReplexNum(telefonoCasaBox.Text);
+            telefonoCasaBox.Text = RegexInstance.Instance.regexNumber(telefonoCasaBox.Text);
         }
 
         private void telefonoOficinaBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            telefonoOficinaBox.Text = ReplexNum(telefonoOficinaBox.Text);
+            telefonoOficinaBox.Text = RegexInstance.Instance.regexNumber(telefonoOficinaBox.Text);
         }
 
         private void camaraBtn_Click(object sender, RoutedEventArgs e)
