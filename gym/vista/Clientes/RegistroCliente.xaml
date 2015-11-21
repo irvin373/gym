@@ -20,13 +20,13 @@
         <Label x:Name="label_Copy6" Content="Tel. Casa" HorizontalAlignment="Left" Margin="19,335,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.461,0.519" Foreground="White" FontSize="16"/>
         <Label x:Name="label_Copy7" Content="Tel. Oficina" HorizontalAlignment="Left" Margin="19,371,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.461,0.519" Foreground="White" FontSize="16"/>
         <Label x:Name="label_Copy8" Content="Fecha Nacimiento" HorizontalAlignment="Left" Margin="17,407,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.452,1.694" Foreground="White" FontSize="16"/>
-        <TextBox x:Name="PaternoBox" HorizontalAlignment="Left" Height="23" Margin="127,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164"/>
-        <TextBox x:Name="nombreBox" HorizontalAlignment="Left" Height="23" Margin="127,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" TextChanged="nombreBox_TextChanged"/>
         <TextBox x:Name="ciBox" HorizontalAlignment="Left" Height="23" Margin="127,91,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" TextChanged="ciBox_TextChanged"/>
-        <TextBox x:Name="MaternoBox" HorizontalAlignment="Left" Height="23" Margin="127,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164"/>
+        <TextBox x:Name="nombreBox" HorizontalAlignment="Left" Height="23" Margin="127,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" TextChanged="nombreBox_TextChanged"/>
+        <TextBox x:Name="PaternoBox" HorizontalAlignment="Left" Height="23" Margin="127,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" TextChanged="PaternoBox_TextChanged"/>
+        <TextBox x:Name="MaternoBox" HorizontalAlignment="Left" Height="23" Margin="127,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" TextChanged="MaternoBox_TextChanged"/>
         <TextBox x:Name="DomicilioBox" HorizontalAlignment="Left" Height="23" Margin="127,235,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="337"/>
         <TextBox x:Name="ZonaBox" HorizontalAlignment="Left" Height="23" Margin="127,271,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164"/>
-        <TextBox x:Name="emailBox" HorizontalAlignment="Left" Height="23" Margin="127,307,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164"/>
+        <TextBox x:Name="emailBox" HorizontalAlignment="Left" Height="23" Margin="127,307,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" TextChanged="emailBox_TextChanged"/>
         <TextBox x:Name="telefonoCasaBox" HorizontalAlignment="Left" Height="23" Margin="127,343,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" TextChanged="telefonoCasaBox_TextChanged"/>
         <TextBox x:Name="telefonoOficinaBox" HorizontalAlignment="Left" Height="23" Margin="127,379,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" TextChanged="telefonoOficinaBox_TextChanged"/>
         <DatePicker x:Name="feCNacimientoBox" HorizontalAlignment="Left" Margin="158,412,0,0" VerticalAlignment="Top" Width="133"/>

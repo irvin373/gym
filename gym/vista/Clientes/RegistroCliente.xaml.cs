@@ -45,10 +45,6 @@ namespace gym.vista
         {
             String resp = String.Empty;
             resp = cliente.verificar();
-            if (ciBox.Text == String.Empty)
-            {
-                resp = "ci aun no ingresado";
-            }
             if (picbyte == null)
             {
                 resp = "la imagen aun no se ha seleccionado";
@@ -57,7 +53,10 @@ namespace gym.vista
             {
                 resp = "fecha aun no ingresada";
             }
-            
+            if (!RegexInstance.Instance.regexMail(emailBox.Text))
+            {
+                resp = "correo no valido";
+            }
             return resp;
         }
 
@@ -84,17 +83,24 @@ namespace gym.vista
         {
             try
             {
-                var cliente = llenarObjeto();
-                String mensajeError = verificarEntradas(cliente);
-                if (mensajeError != String.Empty)
+                if (ciBox.Text == String.Empty)
                 {
-                    MessageBox.Show(mensajeError);
+                    MessageBox.Show("Ci sin ingresar");
                 }
                 else
                 {
-                    ControllerCliente.Instance.insertar(cliente);
-                    MessageBox.Show("guardado exitosamente!!");
-                } 
+                    var cliente = llenarObjeto();
+                    String mensajeError = verificarEntradas(cliente);
+                    if (mensajeError != String.Empty)
+                    {
+                        MessageBox.Show(mensajeError);
+                    }
+                    else
+                    {
+                        ControllerCliente.Instance.insertar(cliente);
+                        MessageBox.Show("guardado exitosamente!!");
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -165,7 +171,22 @@ namespace gym.vista
 
         private void nombreBox_TextChanged(object sender, TextChangedEventArgs e)
         {
+            nombreBox.Text = RegexInstance.Instance.regexText(nombreBox.Text);
+        }
 
+        private void PaternoBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            PaternoBox.Text = RegexInstance.Instance.regexText(PaternoBox.Text);
+        }
+
+        private void MaternoBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            MaternoBox.Text = RegexInstance.Instance.regexText(MaternoBox.Text);
+        }
+
+        private void emailBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
         }
     }
 }
